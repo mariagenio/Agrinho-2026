@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CALCULADORA AGREENHO</title>
-    <!-- The style.css file allows you to change the look of your web pages.
-         If you include the next line in all your web pages, they will all share the same look.
-         This makes it easier to make new pages for your site. -->
-     <div> <h1> hello everyone. this is the first title</h1>
-    </div>
-      body {
+    <style>
+        /* --- 1. STATIC CUSTOM CURSOR --- */
+        html {
+            /* A classic pixel-art 'point' cursor */
+            cursor: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' stroke='%23000000' stroke-width='1.5' d='M7,2 L7,22 L11,18 L14,24 L17,22 L14,16 L20,16 L7,2 Z'/%3E%3C/svg%3E"), auto;
+        }
+
+        /* --- 2. BASE AESTHETICS --- */
+        body {
             margin: 0;
             padding: 20px;
             /* Classic Tiled Background (Dots) */
@@ -21,7 +24,9 @@
             color: #000;
             line-height: 1.4;
         }
-     .wrapper {
+
+        /* --- 3. THE LAYOUT CONTAINER --- */
+        .wrapper {
             max-width: 800px;
             margin: 0 auto;
             background: #ffffff;
@@ -30,5 +35,109 @@
             display: flex;
             flex-direction: column;
         }
-            </head>
-            </html>
+
+        /* Header Area */
+        header {
+            background: #000080; /* Classic Navy Blue */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Main Content Split */
+        .columns {
+            display: flex;
+            min-height: 400px;
+        }
+
+        /* Sidebar Navigation */
+        nav {
+            width: 180px;
+            background: #f0f0f0;
+            border-right: 2px solid #000;
+            padding: 15px;
+        }
+
+        nav h3 {
+            font-size: 1em;
+            text-decoration: underline;
+            margin-top: 0;
+        }
+
+        nav ul {
+            list-style: square;
+            padding-left: 20px;
+        }
+
+        nav li { margin-bottom: 8px; }
+
+        nav a {
+            color: #0000ff;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background: #0000ff;
+            color: #fff;
+        }
+
+        /* Content Area */
+        main {
+            flex: 1;
+            padding: 20px;
+            background: #fff;
+        }
+
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            color: #800080; /* Deep Purple */
+        }
+
+        /* Status Box */
+        .status-box {
+            border: 1px inset #ccc;
+            background: #fafafa;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+
+        /* --- 4. FOOTER & BUTTONS --- */
+        footer {
+            background: #c0c0c0;
+            border-top: 2px solid #000;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.8em;
+        }
+
+        .button-grid {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .button-grid img {
+            width: 88px;
+            height: 31px;
+            image-rendering: pixelated;
+            border: 1px solid #000;
+        }
+
+        /* --- MOBILE TWEAKS --- */
+        @media (max-width: 600px) {
+            .columns { flex-direction: column; }
+            nav { width: auto; border-right: none; border-bottom: 2px solid #000; }
+        }
+    </style>
